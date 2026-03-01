@@ -4,6 +4,7 @@ import fs from 'fs';
 
 import {
   ASSISTANT_NAME,
+  CLAUDE_MODEL,
   MAIN_GROUP_FOLDER,
   SCHEDULER_POLL_INTERVAL,
   TIMEZONE,
@@ -143,6 +144,7 @@ async function runTask(
         isMain,
         isScheduledTask: true,
         assistantName: ASSISTANT_NAME,
+        model: CLAUDE_MODEL,
       },
       (proc, containerName) =>
         deps.onProcess(task.chat_jid, proc, containerName, task.group_folder),
